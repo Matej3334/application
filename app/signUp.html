@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            font-family: 'Courier New', Courier, monospace;
+            align-items: center;
+            margin: 150px;
+            background-color: rgb(174, 237, 174);
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 350px;
+            width: 100%;
+            height: 45%;
+            text-align: center;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        input {
+            display: block;
+            padding: 8px;
+            margin-top: 5px;
+            width: 95%;
+            border: 1px solid #ccc;
+        }
+        .toggle-link {
+            margin-top: 10px;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .toggle-link:hover {
+            text-decoration: underline;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #54b144;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2b9041;
+        }
+        .group {
+            margin-bottom: 20px;
+        }
+        .h,b{
+            display: block;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form class="signup-form">
+            <h><b>Meal share</b></h>
+            <h2>Sign up</h2>
+            <div class="group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+            <div class="group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="username@gmail.com" required>
+            </div>
+            <div class="group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <div class="group">
+                <label for="address">Address</label>
+                <input type="address" id="address" placeholder="Enter your address" required>
+            </div>
+            <div class="group">
+                <button type="submit" style="display: block; margin-top: 20px;">Sign Up</button>
+            </div>
+        </form>
+        <a href="Index.html">Have an account? Log in</a>
+</head>
+<script>
+    const f = document.querySelector('.signup-form');
+    f.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const mail = document.getElementById('email').value.trim();
+
+        if (username && password && mail) {
+            window.location.href = 'restaurants.html';
+        } else {
+            alert('Please fill out all fields.');
+        }
+    });
+</script>
+</body>
+</html>
